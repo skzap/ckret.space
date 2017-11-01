@@ -7,7 +7,7 @@ const app = express()
 app.use(fileUpload())
 
 app.get('/', function (req, res) {
-  
+  res.sendFile(path.join(__dirname + '/client/index.html'));
 })
  
 app.post('/upload', function(req, res) {
@@ -18,7 +18,7 @@ app.post('/upload', function(req, res) {
   var encryptedFile = req.files.encryptedFile
  
   // Use the mv() method to place the file somewhere on your server
-  encryptedFile.mv('/home/adr/Coding/hackaton/encpic/uploads', function(err) {
+  encryptedFile.mv('/uploads', function(err) {
     if (err)
       return res.status(500).send(err)
  
