@@ -8,7 +8,7 @@ const app = express()
 app.use(fileUpload())
 
 app.get('/', function (req, res) {
-  res.sendFile(path.join(__dirname,'../client/index.html'));
+  res.sendFile(path.join(__dirname,'../client/public/index.html'));
 })
  
 app.post('/upload', function(req, res) {
@@ -19,7 +19,7 @@ app.post('/upload', function(req, res) {
   var encryptedFile = req.files.encryptedFile
  
   // calculate the sha512 of the file
-  var sha512 = sha512().update('abc').digest('hex')
+  var sha512 = sha512().update(encryptedFile).digest('hex')
 
   // Use the mv() method to place the file somewhere on your server
   encryptedFile.mv('/uploads/'+sha512, function(err) {
