@@ -1,0 +1,6 @@
+{
+  "name": "Show",
+  "version": "0.0.0",
+  "private": true,
+  "main": "./Show.js"
+}
