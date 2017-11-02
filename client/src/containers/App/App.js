@@ -21,7 +21,7 @@ export default class App extends Component<Props, State> {
       <div className="App">
         <Switch>
           <Route path="/send" name="Send" component={Send}/>
-          <Route path="/show" name="Show" component={Show}/>
+          <Route path="/show/:hash" name="Show" component={Show}/>
           <Redirect from='/' to='/send'/>
         </Switch>
       </div>

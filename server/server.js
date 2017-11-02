@@ -7,10 +7,9 @@ const app = express()
  
 app.use(fileUpload())
 
-app.get('/', function (req, res) {
-  res.sendFile(path.join(__dirname,'../client/public/index.html'));
-})
- 
+app.use(express.static('client/build'))
+app.use(express.static('uploads'))
+
 app.post('/upload', function(req, res) {
   if (!req.files)
     return res.status(400).send('No files were uploaded.')
