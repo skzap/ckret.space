@@ -13,12 +13,17 @@
   left: 0;
   z-index: -1;
 
+  display: flex;
+  align-items: center;
+
   background: url(/img/bg.jpg) no-repeat top center fixed;
 }
 
 .panel {
-  width: 300px;
-  position: absolute;
-  left: 50px;
-  bottom: 50px;
+  width: 400px;
+  margin-left: 50px;
+}
+
+i.send-icon {
+  width: 14px;
 }
