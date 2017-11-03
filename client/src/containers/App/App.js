@@ -1,8 +1,11 @@
 // @flow
 import React, { Component } from 'react';
 import { Switch, Route, Redirect } from 'react-router-dom';
+import { ToastContainer } from 'react-toastify';
+
 import 'bootstrap/dist/css/bootstrap.css';
 import 'bootstrap/dist/css/bootstrap-theme.css';
+import 'react-toastify/dist/ReactToastify.min.css';
 
 import './App.css';
 import Send from '../../components/Send';
@@ -24,6 +27,15 @@ export default class App extends Component<Props, State> {
           <Route path="/show/:hash" name="Show" component={Show}/>
           <Redirect from='/' to='/send'/>
         </Switch>
+        <ToastContainer
+          position="top-center"
+          type="default"
+          autoClose={5000}
+          hideProgressBar={true}
+          newestOnTop={false}
+          closeOnClick
+          pauseOnHover
+        />
       </div>
     );
   }
